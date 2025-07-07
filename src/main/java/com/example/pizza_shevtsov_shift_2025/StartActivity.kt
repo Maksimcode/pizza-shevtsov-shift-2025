@@ -7,7 +7,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.pizza_shevtsov_shift_2025.navigation.SetupNavGraph
-import com.example.pizza_shevtsov_shift_2025.ui.theme.Pizzashevtsovshift2025Theme
+import com.example.pizza_shevtsov_shift_2025.ui.theme.ShiftPizzaTheme
 
 class StartActivity : ComponentActivity() {
 
@@ -17,7 +17,7 @@ class StartActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         setContent {
-            Pizzashevtsovshift2025Theme {
+            ShiftPizzaTheme {
                 navController = rememberNavController()
                 SetupNavGraph(navController = navController)
             }
