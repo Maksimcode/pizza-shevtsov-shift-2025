@@ -2,10 +2,22 @@ package com.example.pizza_shevtsov_shift_2025.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+// Light theme
+val BrandColorLight = Color(0xFFF4511E)
+val BackgroundColorLight = Color(0xFFFFFFFF)
+val ButtonColorLight = Color(0xFF637083)
+val PrimaryTextColorLight = Color(0xFF141C24)
+val SecondaryTextColorLight = Color(0xFF344051)
+val SelectedTabColorLight = Color(0xFFF3F4F6)
+val IndicatorBorderLineLight  = Color(0xFFE4E4E4)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+
+// Dark Theme
+val BrandColorDark = Color(0xFFF4511E)
+val BackgroundColorDark = Color(0xFF141C24)
+val OnBackgroundColorDark = Color(0xFF232A32)
+val ButtonColorDark = Color(0xFFCED2DA)
+val PrimaryTextColorDark = Color(0xFFEFFFFF)
+val SecondaryTextColorDark = Color(0xFFEFF0F1)
+val SelectedTabColorDark = Color(0xFF344051)
+val IndicatorBorderLineDark  = Color(0xFFE4E4E4)
