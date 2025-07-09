@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">ШИФТ Pizza</string>
+
+    <string name="pizza_title">Пицца</string>
+
+    <string name="error_title">Произошла ошибка</string>
+    <string name="error_try_again">Повторить</string>
+
+    <string name="basket_title">Корзина</string>
+    <string name="basket_text">Скоро тут будет корзина</string>
+
+    <string name="order_title">Заказы</string>
+    <string name="order_text">Скоро тут будут заказы</string>
+
+    <string name="profile_title">Профиль</string>
+    <string name="profile_text">Скоро тут будет профиль</string>
+
+    <string name="bottom_bar_pizza">Пицца</string>
+    <string name="bottom_bar_basket">Корзина</string>
+
 </resources>
