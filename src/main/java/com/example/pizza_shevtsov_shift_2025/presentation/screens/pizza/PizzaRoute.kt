@@ -1,4 +1,4 @@
-package com.example.pizza_shevtsov_shift_2025.pizza
+package com.example.pizza_shevtsov_shift_2025.presentation.screens.pizza
 
 import kotlinx.serialization.Serializable
 

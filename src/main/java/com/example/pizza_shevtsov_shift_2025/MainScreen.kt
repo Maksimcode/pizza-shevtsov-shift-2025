@@ -7,7 +7,9 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -24,14 +26,19 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.example.pizza_shevtsov_shift_2025.catalog.CatalogRoute
-import com.example.pizza_shevtsov_shift_2025.pizza.PizzaRoute
+import com.example.pizza_shevtsov_shift_2025.presentation.screens.catalog.CatalogRoute
+import com.example.pizza_shevtsov_shift_2025.presentation.screens.pizza.PizzaRoute
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
-import com.example.pizza_shevtsov_shift_2025.basket.BasketRoute
-import com.example.pizza_shevtsov_shift_2025.basket.BasketScreen
-import com.example.pizza_shevtsov_shift_2025.catalog.CatalogScreen
-import com.example.pizza_shevtsov_shift_2025.pizza.PizzaScreen
+import com.example.pizza_shevtsov_shift_2025.presentation.navigation.NavigationOption
+import com.example.pizza_shevtsov_shift_2025.presentation.screens.cart.CartRoute
+import com.example.pizza_shevtsov_shift_2025.presentation.screens.cart.CartScreen
+import com.example.pizza_shevtsov_shift_2025.presentation.screens.catalog.CatalogScreen
+import com.example.pizza_shevtsov_shift_2025.presentation.screens.order.OrderRoute
+import com.example.pizza_shevtsov_shift_2025.presentation.screens.order.OrderScreen
+import com.example.pizza_shevtsov_shift_2025.presentation.screens.pizza.PizzaScreen
+import com.example.pizza_shevtsov_shift_2025.presentation.screens.profile.ProfileRoute
+import com.example.pizza_shevtsov_shift_2025.presentation.screens.profile.ProfileScreen
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -41,8 +48,11 @@ fun MainScreen() {
 
     Scaffold { paddingValues: PaddingValues ->
         Column(modifier = Modifier.padding(top = paddingValues.calculateTopPadding())) {
+
             NavHost(
-                modifier = Modifier.padding(paddingValues),
+                modifier = Modifier
+                    .padding(paddingValues)
+                    .weight(1f),
                 navController = navController,
                 startDestination = CatalogRoute,
             ) {
@@ -63,9 +73,16 @@ fun MainScreen() {
                         }
                     )
                 }
-                composable<BasketRoute> {
-                    BasketScreen()
+                composable<OrderRoute> {
+                    OrderScreen()
                 }
+                composable<CartRoute> {
+                    CartScreen()
+                }
+                composable<ProfileRoute> {
+                    ProfileScreen()
+                }
+
             }
             BottomNavigation(
                 navigationOptions = NavigationOption.entries,
@@ -73,7 +90,9 @@ fun MainScreen() {
                 onItemClicked = { navOption ->
                     when (navOption) {
                         NavigationOption.PIZZA -> navController.openPoppingAllPrevious(CatalogRoute)
-                        NavigationOption.BASKET -> navController.openPoppingAllPrevious(BasketRoute)
+                        NavigationOption.ORDER -> navController.openPoppingAllPrevious(OrderRoute)
+                        NavigationOption.CART -> navController.openPoppingAllPrevious(CartRoute)
+                        NavigationOption.PROFILE -> navController.openPoppingAllPrevious(ProfileRoute)
                     }
                     selectedTab.value = navOption
                 }
@@ -113,14 +132,18 @@ private fun BottomNavigation(
 private fun getIcon(option: NavigationOption): ImageVector =
     when (option){
         NavigationOption.PIZZA -> Icons.Default.Home
-        NavigationOption.BASKET -> Icons.Default.Delete
+        NavigationOption.ORDER -> Icons.Default.Favorite
+        NavigationOption.CART -> Icons.Default.Delete
+        NavigationOption.PROFILE -> Icons.Default.Settings
     }
 
 @Composable
 private fun getLabel(option: NavigationOption): String = stringResource(
     when (option){
         NavigationOption.PIZZA -> R.string.bottom_bar_pizza
-        NavigationOption.BASKET -> R.string.bottom_bar_basket
+        NavigationOption.ORDER -> R.string.bottom_bar_order
+        NavigationOption.CART -> R.string.bottom_bar_cart
+        NavigationOption.PROFILE -> R.string.bottom_bar_profile
     }
 )
 

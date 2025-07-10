@@ -1,9 +1,9 @@
-package com.example.pizza_shevtsov_shift_2025.catalog
+package com.example.pizza_shevtsov_shift_2025.data.dto
 
-import com.example.pizza_shevtsov_shift_2025.entities.DoughType
-import com.example.pizza_shevtsov_shift_2025.entities.IngredientType
-import com.example.pizza_shevtsov_shift_2025.entities.SizeType
-import com.example.pizza_shevtsov_shift_2025.entities.ToppingType
+import com.example.pizza_shevtsov_shift_2025.data.entities.DoughType
+import com.example.pizza_shevtsov_shift_2025.data.entities.IngredientType
+import com.example.pizza_shevtsov_shift_2025.data.entities.SizeType
+import com.example.pizza_shevtsov_shift_2025.data.entities.ToppingType
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

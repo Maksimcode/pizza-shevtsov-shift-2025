@@ -1,4 +1,4 @@
-package com.example.pizza_shevtsov_shift_2025.catalog
+package com.example.pizza_shevtsov_shift_2025.presentation.screens.catalog
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,6 +17,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.pizza_shevtsov_shift_2025.FullScreenProgressIndicator
 import com.example.pizza_shevtsov_shift_2025.R
+import com.example.pizza_shevtsov_shift_2025.catalog.PizzaCatalogContent
+import com.example.pizza_shevtsov_shift_2025.catalog.PizzaCatalogError
+import com.example.pizza_shevtsov_shift_2025.catalog.PizzaCatalogState
 import com.example.pizza_shevtsov_shift_2025.data.PizzaCatalogItem
 import com.example.pizza_shevtsov_shift_2025.network.NetworkModule
 import kotlinx.coroutines.launch
@@ -52,7 +55,7 @@ fun CatalogScreen(
 
             is PizzaCatalogState.Content ->
                 PizzaCatalogContent(
-                    pizzas      = currentState.pizzas,
+                    pizzas = currentState.pizzas,
                     onItemClick = onItemClick
                 )
 
@@ -87,6 +90,6 @@ private fun Title(){
 
 private suspend fun getPizzaCatalogItems(): List<PizzaCatalogItem> {
     val resp = NetworkModule.pizzaCatalogApi.getAll()
-    if (!resp.success) throw Exception(resp.reason)
+    if (!resp.success) throw Exception(resp.reason.orEmpty())
     return NetworkModule.pizzaCatalogItemConverter.fromCatalogDto(resp)
 }

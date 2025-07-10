@@ -1,4 +1,4 @@
-package com.example.pizza_shevtsov_shift_2025.basket
+package com.example.pizza_shevtsov_shift_2025.presentation.screens.cart
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,13 +15,13 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
 
 @Composable
-fun BasketScreen () {
+fun CartScreen () {
     Column(modifier = Modifier.fillMaxSize()){
         Text(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 12.dp, horizontal = 8.dp),
-            text = stringResource(id = R.string.basket_title),
+            text = stringResource(id = R.string.cart_title),
             style = MaterialTheme.typography.titleLarge
         )
 
@@ -32,7 +32,7 @@ fun BasketScreen () {
             contentAlignment = Alignment.Center,
         ){
             Text(
-                text = stringResource(id = R.string.basket_text),
+                text = stringResource(id = R.string.cart_text),
                 style = MaterialTheme.typography.bodyMedium
             )
         }

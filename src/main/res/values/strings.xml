@@ -6,8 +6,8 @@
     <string name="error_title">Произошла ошибка</string>
     <string name="error_try_again">Повторить</string>
 
-    <string name="basket_title">Корзина</string>
-    <string name="basket_text">Скоро тут будет корзина</string>
+    <string name="cart_title">Корзина</string>
+    <string name="cart_text">Скоро тут будет корзина</string>
 
     <string name="order_title">Заказы</string>
     <string name="order_text">Скоро тут будут заказы</string>
@@ -16,6 +16,8 @@
     <string name="profile_text">Скоро тут будет профиль</string>
 
     <string name="bottom_bar_pizza">Пицца</string>
-    <string name="bottom_bar_basket">Корзина</string>
+    <string name="bottom_bar_order">Заказы</string>
+    <string name="bottom_bar_cart">Корзина</string>
+    <string name="bottom_bar_profile">Профиль</string>
 
 </resources>

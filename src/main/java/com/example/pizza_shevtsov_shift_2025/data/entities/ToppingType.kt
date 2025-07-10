@@ -1,6 +1,6 @@
-package com.example.pizza_shevtsov_shift_2025.entities
+package com.example.pizza_shevtsov_shift_2025.data.entities
 
-enum class IngredientType {
+enum class ToppingType {
     PINEAPPLE,
     MOZZARELLA,
     PEPERONI,
@@ -18,5 +18,5 @@ enum class IngredientType {
     CHILE,
     SHRIMPS,
     CHICKEN_FILLET,
-    MEATBALLS
+    MEATBALLS,
 }

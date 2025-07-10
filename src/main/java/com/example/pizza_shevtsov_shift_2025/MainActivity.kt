@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.example.pizza_shevtsov_shift_2025.ui.theme.ShiftPizzaTheme
+import com.example.pizza_shevtsov_shift_2025.presentation.theme.ShiftPizzaTheme
 
 class MainActivity : ComponentActivity() {
 

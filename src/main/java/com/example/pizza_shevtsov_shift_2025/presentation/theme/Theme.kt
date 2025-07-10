@@ -1,4 +1,4 @@
-package com.example.pizza_shevtsov_shift_2025.ui.theme
+package com.example.pizza_shevtsov_shift_2025.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController

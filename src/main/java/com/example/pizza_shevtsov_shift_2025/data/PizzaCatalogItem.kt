@@ -1,9 +1,9 @@
 package com.example.pizza_shevtsov_shift_2025.data
 
-import com.example.pizza_shevtsov_shift_2025.entities.DoughType
-import com.example.pizza_shevtsov_shift_2025.entities.IngredientType
-import com.example.pizza_shevtsov_shift_2025.entities.SizeType
-import com.example.pizza_shevtsov_shift_2025.entities.ToppingType
+import com.example.pizza_shevtsov_shift_2025.data.entities.DoughType
+import com.example.pizza_shevtsov_shift_2025.data.entities.IngredientType
+import com.example.pizza_shevtsov_shift_2025.data.entities.SizeType
+import com.example.pizza_shevtsov_shift_2025.data.entities.ToppingType
 
 data class PizzaCatalogItem(
     val id: String,
@@ -11,6 +11,8 @@ data class PizzaCatalogItem(
     val ingredients: List<Ingredient>,
     val toppings: List<Topping>,
     val description: String,
+    val price: Int,
+    val sizePrices: Map<SizeType, Int> = emptyMap(),
     val sizes: List<Size>,
     val doughs: List<Dough>,
     val calories: Int,
