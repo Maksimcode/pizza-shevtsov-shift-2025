@@ -1,7 +1,7 @@
-package com.example.pizza_shevtsov_shift_2025.network
+package com.example.pizza_shevtsov_shift_2025.di
 
-import com.example.pizza_shevtsov_shift_2025.catalog.PizzaCatalogApi
-import com.example.pizza_shevtsov_shift_2025.catalog.PizzaCatalogItemConverter
+import com.example.pizza_shevtsov_shift_2025.data.api.PizzaCatalogApi
+import com.example.pizza_shevtsov_shift_2025.data.converter.PizzaCatalogItemConverter
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient

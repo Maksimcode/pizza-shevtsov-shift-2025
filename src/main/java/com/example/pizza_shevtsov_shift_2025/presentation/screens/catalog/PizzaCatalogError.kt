@@ -1,4 +1,4 @@
-package com.example.pizza_shevtsov_shift_2025.catalog
+package com.example.pizza_shevtsov_shift_2025.presentation.screens.catalog
 
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button

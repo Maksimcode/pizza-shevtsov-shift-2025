@@ -14,14 +14,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.pizza_shevtsov_shift_2025.FullScreenProgressIndicator
 import com.example.pizza_shevtsov_shift_2025.R
-import com.example.pizza_shevtsov_shift_2025.catalog.PizzaCatalogContent
-import com.example.pizza_shevtsov_shift_2025.catalog.PizzaCatalogError
-import com.example.pizza_shevtsov_shift_2025.catalog.PizzaCatalogState
 import com.example.pizza_shevtsov_shift_2025.data.PizzaCatalogItem
-import com.example.pizza_shevtsov_shift_2025.network.NetworkModule
+import com.example.pizza_shevtsov_shift_2025.di.NetworkModule
 import kotlinx.coroutines.launch
 
 @Composable
@@ -83,8 +81,10 @@ fun CatalogScreen(
 private fun Title(){
     Text(
         text = stringResource(id = R.string.pizza_title),
-        style = MaterialTheme.typography.titleLarge,
-        modifier = Modifier.padding(horizontal = 16.dp)
+        color = MaterialTheme.colorScheme.onPrimary,
+        style = MaterialTheme.typography.displaySmall
+            .copy(fontWeight = FontWeight.Bold),
+        modifier = Modifier.padding(horizontal = 24.dp)
     )
 }
 

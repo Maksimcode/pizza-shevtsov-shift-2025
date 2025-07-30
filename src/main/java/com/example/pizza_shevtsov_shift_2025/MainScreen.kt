@@ -10,17 +10,23 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.material3.Text
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -117,16 +123,34 @@ private fun BottomNavigation(
     selectedNavigationOption: NavigationOption,
     onItemClicked: (NavigationOption) -> Unit,
 ) {
-  NavigationBar{
-      for (option in navigationOptions){
-          NavigationBarItem(
-              selected = selectedNavigationOption == option,
-              onClick = {onItemClicked(option)},
-              icon = { Icon(getIcon(option), "") },
-              label = { Text(text = getLabel(option))}
-          )
-      }
-  }
+    Column {
+        HorizontalDivider(
+            thickness = 2.dp,
+            color = MaterialTheme.colorScheme.outline
+        )
+        NavigationBar(
+            containerColor = MaterialTheme.colorScheme.background,
+        ) {
+            navigationOptions.forEach { option ->
+                val selected = option == selectedNavigationOption
+
+                NavigationBarItem(
+                    selected = selected,
+                    onClick = { onItemClicked(option) },
+                    icon = { Icon(getIcon(option), contentDescription = getLabel(option)) },
+                    label = { Text(getLabel(option)) },
+
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = MaterialTheme.colorScheme.primary,
+                        unselectedIconColor = MaterialTheme.colorScheme.surface,
+                        selectedTextColor = MaterialTheme.colorScheme.primary,
+                        unselectedTextColor = MaterialTheme.colorScheme.surface,
+                        indicatorColor = Color.Transparent
+                    )
+                )
+            }
+        }
+    }
 }
 
 private fun getIcon(option: NavigationOption): ImageVector =
